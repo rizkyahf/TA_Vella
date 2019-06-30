@@ -1,7 +1,7 @@
 <?php
     defined('BASEPATH') OR exit('No direct script access allowed');
 
-class c_mahasiswa extends CI_Controller{
+class c_legalaudit extends CI_Controller{
     function __Construct(){
         parent::__Construct();
         if ($this->session->userdata('username')==null){
