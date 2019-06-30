@@ -4,10 +4,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="<?php echo base_url();?>asset/bootstrap/css/bootstrap.css">
-        <link rel="stylesheet" href="<?php echo base_url(); ?>asset/datatable/datatables.css">
-        <script type="text/javascript" src="<?php echo base_url(); ?>asset/datatable/datatables.js"></script>
-        <link rel="stylesheet" href="<?php echo base_url(); ?>asset/datatable/DataTables-1.10.18/css/jquery.dataTables.css">
-        <script type="text/javascript" src="<?php echo base_url(); ?>asset/datatable/DataTables-1.10.18/js/jquery.dataTables.js"></script>
+        <link rel="stylesheet" href="<?php echo base_url();?>asset/bootstrap/datatable/datatables.css">
+        <!-- ini gausah -->
+        <!-- <script type="text/javascript" src="<?php echo base_url(); ?>asset/datatable/datatables.js"></script> -->
+        <!-- <link rel="stylesheet" href="<?php echo base_url(); ?>asset/datatable/DataTables-1.10.18/css/jquery.dataTables.css"> -->
+        <!-- <script type="text/javascript" src="<?php echo base_url(); ?>asset/datatable/DataTables-1.10.18/js/jquery.dataTables.js"></script> -->
         <style>
             p{
             font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -71,7 +72,7 @@
         <div class="container">
             <div class="row navbar"  style="margin:0px">
                 <div class="col-md-2" align="center" style="border-radius: 15px">
-                    <a href="<?php echo base_url();?>">Inventarisasi Aset</a>
+                    <a href="<?php echo base_url();?>index.php/c_home/display">Inventarisasi Aset</a>
                 </div>
                 <div class="col-md-2" align="center" style="border-radius: 15px">
                     <a href="<?php echo base_url();?>index.php/c_legalaudit/display">Legal Audit</a>
@@ -93,10 +94,12 @@
         </div>
         <script src="<?php echo base_url();?>asset/bootstrap/js/jquery-3.3.1.min.js"></script>
         <script src="<?php echo base_url();?>asset/bootstrap/js/bootstrap.js"></script>
-        <script scr="<?php echo base_url(); ?>asset/datatable/datatables.js"></script>
+        <script src="<?php echo base_url();?>asset/bootstrap/datatable/datatables.min.js"></script>
+        <!-- <script scr="<?php echo base_url();?>asset/datatable/DataTables-1.10.18/js/jquery.dataTables.js"></script> -->
+        <!-- <script scr="<?php echo base_url();?>asset/datatables/file.js"></script> -->
         <script type="text/javascript"> 
             $(document).ready( function () {
-                $('#table-filtered').DataTable();
+                $('.table-filtered').DataTable();
             });
         </script>
     </body>
