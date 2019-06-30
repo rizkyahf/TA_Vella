@@ -2,7 +2,7 @@
     <div class="table-responsive col-md-8 col-md-offset-2">
     <h2 align="center">Daftar Aset</h2>
         <div class="col-md-3 col-md-offset-9">
-            <a class="btn btn-info btn-lg" href="<?php echo base_url();?>index.php/c_legalaudit/inputlegal">Input</a>
+            <a class="btn btn-info btn-lg" href="<?php echo base_url();?>index.php/c_legalaudit/input">Input</a>
             <a class="btn btn-info btn-lg" href="<?php echo base_url();?>index.php/c_legalaudit/print">Print</a>
         </div>
         <table class="table table-striped table-hover table-filtered">
