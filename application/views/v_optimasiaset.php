@@ -2,7 +2,7 @@
     <div class="table-responsive col-md-8 col-md-offset-2">
     <h2 align="center">Optimasi Aset</h2>
         <div class="col-md-3 col-md-offset-9">
-        <a class="btn btn-info btn-lg" href="<?php echo base_url();?>index.php/c_optimasiaset/inputoptimasi">Input</a>
+            <a class="btn btn-info btn-lg" href="<?php echo base_url();?>index.php/c_optimasiaset/input">Input</a>
             <a class="btn btn-info btn-lg" href="<?php echo base_url();?>index.php/c_optimasiaset/print">Print</a>
         </div>
         <table class="table table-striped table-hover table-filtered">
