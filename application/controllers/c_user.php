@@ -16,17 +16,22 @@ class c_user extends CI_Controller{
         if ($this->session->userdata('username')!=null){
             redirect(site_url('c_home/display'));
         }
-        if ($this->input->post('login')!=null){
-            $data['username'] = $this->input->post('username');
-            $data['password'] = $this->input->post('password');
-            
-            $cek[] = $this->m_user->cekAdmin($data['username'],$data['password']);
-            if($cek!=null){
-                $this->session->set_userdata($data);
-                redirect(site_url('c_home/display'));
+        else{
+            if ($this->input->post('login')!=null){
+                $data['username'] = $this->input->post('username');
+                $data['password'] = $this->input->post('password');
+                
+                $cek = $this->m_user->cekAdmin($data['username'],$data['password']);
+                if($cek!=null){
+                    $this->session->set_userdata($data);
+                    redirect(site_url('c_home/display'));
+                }
+                else {
+                    redirect(site_url('c_user/login'));
+                }
+            } else {
+                redirect(site_url('c_user/login'));
             }
-        } else {
-            redirect(site_url('c_user/login'));
         }
     }
     public function signup(){
@@ -39,5 +44,7 @@ class c_user extends CI_Controller{
         $this->session->sess_destroy();
         redirect(site_url());
     }
-
+    public function dump($data){
+        echo "<pre>"; var_dump($data); echo "</pre>";
+    }
 }
