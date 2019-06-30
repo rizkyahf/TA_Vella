@@ -1,5 +1,5 @@
 <div class="row">
-    <h2 align="center">Input Data Mahasiswa</h2>
+    <h2 align="center">Input Data Penilaian Aset</h2>
     <div class="col-md-6 col-md-offset-3">
         <form method="POST" action="<?php echo base_url();?>index.php/c_mahasiswa/addmahasiswa" enctype="multipart/form-data">
             <div class="form-group">
