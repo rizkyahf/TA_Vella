@@ -34,8 +34,9 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <input type="submit" name="login" value="login" class="btn float-right login_btn">
-                            <input type="button" name="signup" value="signup" class="btn float-right login_btn">
+                            <input type="submit" name="login" value="Login" class="btn float-right btn-primary login_btn">
+                            <!-- <input type="button" name="signup" value="signup" class="btn float-right login_btn"> -->
+                            <a class="btn btn-default float-right" href="<?php echo base_url(); ?>index.php/c_user/signup">Sign Up </a>
                         </div>
                         <div class="col-md-3 col-md-offset-9">
                             <!-- <a class="btn btn-info btn-lg" href="<?php echo base_url();?>index.php/c_user/input">Sign Up</a> -->
