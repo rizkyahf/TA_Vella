@@ -1,14 +1,12 @@
-<html>
+<!DOCTYPE HTML>
+<html lang="en">
     <head>
         <title>UTC Aerospace System</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="<?php echo base_url();?>asset/bootstrap/css/bootstrap.css">
         <link rel="stylesheet" href="<?php echo base_url();?>asset/bootstrap/datatable/datatables.css">
-        <!-- ini gausah -->
-        <!-- <script type="text/javascript" src="<?php echo base_url(); ?>asset/datatable/datatables.js"></script> -->
-        <!-- <link rel="stylesheet" href="<?php echo base_url(); ?>asset/datatable/DataTables-1.10.18/css/jquery.dataTables.css"> -->
-        <!-- <script type="text/javascript" src="<?php echo base_url(); ?>asset/datatable/DataTables-1.10.18/js/jquery.dataTables.js"></script> -->
+        <link rel="stylesheet" href="<?php echo base_url();?>asset/bootstrap/datatable/buttons.datatables.min.css">
         <style>
             p{
             font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -95,11 +93,38 @@
         <script src="<?php echo base_url();?>asset/bootstrap/js/jquery-3.3.1.min.js"></script>
         <script src="<?php echo base_url();?>asset/bootstrap/js/bootstrap.js"></script>
         <script src="<?php echo base_url();?>asset/bootstrap/datatable/datatables.min.js"></script>
-        <!-- <script scr="<?php echo base_url();?>asset/datatable/DataTables-1.10.18/js/jquery.dataTables.js"></script> -->
-        <!-- <script scr="<?php echo base_url();?>asset/datatables/file.js"></script> -->
+        <!-- <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script> -->
+        <script src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+        <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+        <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+                
+        <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
         <script type="text/javascript"> 
             $(document).ready( function () {
-                $('.table-filtered').DataTable();
+                $('.table-filtered').DataTable({
+                    dom: 'Bfrtip',
+                    buttons: [
+                        {
+                            extend: 'excelHtml5',
+                            title: $(this).data("tablename"),
+                            text:'Export to excel'
+                            //Columns to export
+                            //exportOptions: {
+                        //     columns: [0, 1, 2, 3,4,5,6]
+                        // }
+                        },
+                        {
+                            extend: 'pdfHtml5',
+                            title: $(this).data("tablename"),
+                            text: 'Export to PDF'
+                            //Columns to export
+                            //exportOptions: {
+                        //     columns: [0, 1, 2, 3, 4, 5, 6]
+                        //  }
+                        }
+                    ]
+                });
             });
         </script>
     </body>

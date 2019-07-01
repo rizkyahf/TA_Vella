@@ -5,7 +5,7 @@
             <a class="btn btn-info btn-lg" href="<?php echo base_url();?>index.php/c_asset/input">Input</a>
             <a class="btn btn-info btn-lg" href="<?php echo base_url();?>index.php/c_asset/print">Print</a>
         </div>
-        <table id="" class="table table-striped table-hover table-filtered">
+        <table id="table-filtered" class="table table-striped table-hover table-filtered" data-tablename="Daftar Inventarisasi Aset">
             <thead>
                 <tr class="success">
                     <td>Nomor Aset</td>
