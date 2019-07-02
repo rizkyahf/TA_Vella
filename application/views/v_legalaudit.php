@@ -23,26 +23,8 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>3000753</td>
-                    <td>Sertikat</td>
-                    <td>27072012</td>
-                    <td>LPI-1688-1</td>
-                </tr>
-                <tr>
-                    <td>300761</td>
-                    <td>Kartu Garansi</td>
-                    <td>27072012</td>
-                    <td>LPI-0621</td>
-                </tr>
-                <tr>
-                    <td>300772</td>
-                    <td>Kartu Kepemilikan</td>
-                    <td>27072012</td>
-                    <td>LPI-1038</td>
-                </tr>
-                <!-- <?php
-                    foreach($legal_audit as $result){?>
+                <?php
+                    foreach($legalaudit as $result){?>
                         <tr>
                             <td>
                                 <?php echo $result['nomor_aset']; ?>
@@ -56,16 +38,10 @@
                             <td>
                                 <?php echo $result['foto_aset']; ?>
                             </td>
-                            <!-- <td>
-                                <a href="template.php?page=delete&id=<?php echo $row['nim'];?>">Delete</a>
-                            </td>
-                            <td>
-                                <a href="template.php?page=update&id=<?php echo $row['nim'];?>">Update</a>
-                            </td>
-                        </tr> -->
+                        </tr>
                     <?php        
                     }
-                ?> -->
+                ?>
             </tbody>
         </table>
     </div>
