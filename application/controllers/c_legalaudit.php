@@ -19,7 +19,7 @@ class c_legalaudit extends CI_Controller{
         $data['content'] = $this->load->view('v_tambahlegal','',true);
         $this->load->view('v_template',$data);
     }
-    public function addmahasiswa(){
+    public function add(){
         if ($this->input->post('Simpan')!=null){
             $input['nomor_dokumen'] = $this->input->post('nomor_dokumen');
             $input['tanggal_penetapan'] = $this->input->post('tanggal_penetapan');

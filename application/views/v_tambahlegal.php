@@ -8,6 +8,7 @@
                 <select class="js-example-basic-single form-control" id="nomor_aset" placeholder="Nomor Aset" name="nomor_aset">
                     <?php
                         foreach($nomor_aset as $result){?>
+                        echo $result['nomor_aset']
                             <option value="<?php echo $result['nomor_aset'] ?>">
                         <?php }
                     ?>

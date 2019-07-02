@@ -3,7 +3,7 @@
     <h2 align="center">Daftar Aset</h2>
         <div class="col-md-3 col-md-offset-9">
             <a class="btn btn-info btn-lg" href="<?php echo base_url();?>index.php/c_asset/input">Input</a>
-            <a class="btn btn-info btn-lg" href="<?php echo base_url();?>index.php/c_asset/print">Print</a>
+            <!-- <a class="btn btn-info btn-lg" href="<?php echo base_url();?>index.php/c_asset/print">Print</a> -->
         </div>
         <table id="table-filtered" class="table table-striped table-hover table-filtered" data-tablename="Daftar Inventarisasi Aset">
             <thead>
