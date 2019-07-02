@@ -2,11 +2,18 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class c_home extends CI_Controller{
-    public function display(){
+    function __Construct(){
+        parent::__Construct();
         if ($this->session->userdata('username')==null){
             redirect(site_url('c_user/login'));
         }
-        $data['content']=$this->load->view('v_home','',true);
+        $this->load->model('m_asset');
+    }
+
+    public function display(){
+        $data2['inventarisasi_aset'] = $this->m_asset->getData();
+
+        $data['content']=$this->load->view('v_home',$data2,true);
         $this->load->view('v_template',$data);
     }
 }

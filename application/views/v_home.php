@@ -21,7 +21,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <!-- <tr>
                     <td>3000753</td>
                     <td>V_BLOCK</td>
                     <td>3000</td>
@@ -56,8 +56,8 @@
                     <td>VALID</td>
                     <td>R29-A</td>
                     <td>OUT CELL COUPLING</td>
-                </tr>
-                <!-- <?php
+                </tr> -->
+                <?php
                     foreach($inventarisasi_aset as $result){?>
                         <tr>
                             <td>
@@ -88,12 +88,12 @@
                                 <?php echo $result['lokasi']; ?>
                             </td>
                             <td>
-                                <?php echo $result['[penanggungjawab]']; ?>
+                                <?php echo $result['penanggungjawab']; ?>
                             </td>
                         </tr>
                     <?php        
                     }
-                ?> -->
+                ?>
             </tbody>
         </table>
     </div>
