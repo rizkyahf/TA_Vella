@@ -29,32 +29,8 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>480810</td>
-                    <td>Broken</td>
-                    <td>Lamp</td>
-                    <td>Penggantian lampu</td>
-                    <td><img src="<?php echo base_url(); ?>asset/upload/maintenance.png" width="100px"> </td>
-                    <td>1400000</td>
-                </tr>
-                <tr>
-                    <td>111940</td>
-                    <td>Broken</td>
-                    <td>Body keropos</td>
-                    <td>Dempul bagian keropos</td>
-                    <td><img src="<?php echo base_url(); ?>asset/upload/maintenance.png" width="100px"> </td>
-                    <td>1250000</td>
-                </tr>
-                <tr>
-                    <td>230390</td>
-                    <td>Broken</td>
-                    <td>Kain penutup</td>
-                    <td>Penggantian kain penutup</td>
-                    <td><img src="<?php echo base_url(); ?>asset/upload/maintenance.png" width="100px"> </td>
-                    <td>800000</td>
-                </tr>
-                <!-- <?php
-                    foreach($optimasi_aset as $result){?>
+                <?php
+                    foreach($optimasiaset as $result){?>
                         <tr>
                             <td>
                                 <?php echo $result['akusisi']; ?>
@@ -69,21 +45,18 @@
                                 <?php echo $result['jenis_pemeliharaan']; ?>
                             </td>
                             <td>
-                                <?php echo $result['foto_optimasi']; ?>
+                                <?php 
+                                    if($result['foto_optimasi'] == NULL) {$foto = "maintenance.png";}
+                                    else {$foto = $result['foto_optimasi'];}?>
+                                <img src="<?php echo base_url(); ?>asset/upload/<?php echo $foto; ?>" width="100px">
                             </td>
                             <td>
                                 <?php echo $result['estimasi_biaya']; ?>
                             </td>
-                            <!-- <td>
-                                <a href="template.php?page=delete&id=<?php echo $row['nim'];?>">Delete</a>
-                            </td>
-                            <td>
-                                <a href="template.php?page=update&id=<?php echo $row['nim'];?>">Update</a>
-                            </td> -->
                         </tr>
                     <?php        
                     }
-                ?> -->
+                ?>
             </tbody>
         </table>
     </div>
