@@ -29,7 +29,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <!-- <tr>
                     <td>2000008</td>
                     <td>480810</td>
                     <td>334613.87</td>
@@ -52,8 +52,8 @@
                     <td>70052.87</td>
                     <td>140</td>
                     <td>153000</td>
-                </tr>
-                <!-- <?php
+                </tr> -->
+                <?php
                     foreach($penilaianaset as $result){?>
                         <tr>
                             <td>
@@ -74,16 +74,10 @@
                             <td>
                                 <?php echo $result['ApCacct']; ?>
                             </td>
-                            <!-- <td>
-                                <a href="template.php?page=delete&id=<?php echo $row['nim'];?>">Delete</a>
-                            </td>
-                            <td>
-                                <a href="template.php?page=update&id=<?php echo $row['nim'];?>">Update</a>
-                            </td> -->
                         </tr>
                     <?php        
                     }
-                ?> -->
+                ?>
             </tbody>
         </table>
     </div>
