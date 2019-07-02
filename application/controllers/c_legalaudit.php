@@ -8,6 +8,7 @@ class c_legalaudit extends CI_Controller{
             redirect(site_url('c_user/login'));
         }
         $this->load->model('m_legalaudit');
+        $this->load->model('m_asset');
     }
     public function display(){
         $data_aset['legalaudit']=$this->m_legalaudit->getData();

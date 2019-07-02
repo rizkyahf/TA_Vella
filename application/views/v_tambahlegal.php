@@ -4,7 +4,18 @@
         <form method="POST" action="<?php echo base_url();?>index.php/c_mahasiswa/addmahasiswa" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="nomor_aset">Nomor Aset</label>
-                <input type="text" class="form-control" id="nomor_aset" placeholder="Nomor Aset" name="nomor_aset">
+                <!-- <input type="text" class="form-control" id="nomor_aset" placeholder="Nomor Aset" name="nomor_aset"> -->
+                <select class="js-example-basic-single form-control" id="nomor_aset" placeholder="Nomor Aset" name="nomor_aset">
+                    <?php
+                        foreach($nomor_aset as $result){?>
+                            <option value="<?php echo $result['nomor_aset'] ?>">
+                        <?php }
+                    ?>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="nomor_dokumen">Nomor Dokumen</label>
+                <input type="text" class="form-control" id="nomor_dokumen" placeholder="Nomor Dokumen" name="nomor_dokumen">
             </div>
             <div class="form-group">
                 <label for="tanggal_penetapan">Tanggal Penetapan</label>
