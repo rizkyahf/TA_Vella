@@ -21,13 +21,13 @@
             </div>
             <div class="form-group">
                 <label for="tanggal_penetapan">Tanggal Penetapan</label>
-                <input type="text" class="form-control" id="tanggal_penetapan" placeholder="Tanggal Penetapan" name="taggal_penetapan">
+                <input type="text" class="form-control" id="tanggal_penetapan" placeholder="Tanggal Penetapan" name="tanggal_penetapan">
             </div>
             <div class="form-group">
                 <label for="foto_aset">Foto Aset</label>
                 <input type="file" id="foto_aset" name="foto_aset">
             </div>
-            <input type="submit" class="btn btn-sm btn-primary" name="Save" value="Save">
+            <input type="submit" class="btn btn-sm btn-primary" name="simpan" value="Save">
         </form>
     </div>
 </div>

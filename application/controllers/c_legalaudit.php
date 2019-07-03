@@ -21,19 +21,20 @@ class c_legalaudit extends CI_Controller{
         $this->load->view('v_template',$data);
     }
     public function add(){
-        if ($this->input->post('Simpan')!=null){
+        if ($this->input->post('simpan')!=null){
+            $input['nomor_aset'] = $this->input->post('nomor_aset');
             $input['nomor_dokumen'] = $this->input->post('nomor_dokumen');
             $input['tanggal_penetapan'] = $this->input->post('tanggal_penetapan');
             $input['foto_aset'] = '';
 
-            $config['upload_path']  = 'asset/upload';
+            $config['upload_path']  = 'asset/upload/legal';
             $config['allowed_types'] = 'jpg|jpeg|png';
-            $config['file_name']    = $input['nomor_dokumen'];
+            $config['file_name']    = uniqid();
             $config['max_size']     = 5000;
 
             $this->load->library('upload',$config);
 
-            if (!$this->upload->do_upload('foto')){
+            if (!$this->upload->do_upload('foto_aset')){
                 $error = array('error' => $this->upload->display_errors());
                 // echo $error;
                 // echo 'error';
@@ -42,7 +43,7 @@ class c_legalaudit extends CI_Controller{
                 echo 'input';
                 $input['foto_aset'] = $this->upload->data('file_name');
                 echo $input['foto_aset'];
-                $this->m_mahasiswa->addData($input);
+                $this->m_legalaudit->addData($input);
                 redirect(site_url('c_legalaudit/display'));    
             }
         }

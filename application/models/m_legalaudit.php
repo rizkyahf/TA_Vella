@@ -7,10 +7,10 @@ class m_legalaudit extends CI_Model{
         return $query->result_array();
     }
     
-    function addData($legal_audit){
+    function addData($data){
         // $data = array('nim' => $nim, 'nama' => $nama, 'umur' => $umur);
         // $query=$this->db->query("insert into mahasiswa VALUES ('nim','nama','umur')");
-        $this->db->insert('asset',$legal_audit);
+        $this->db->insert('legal_audit',$data);
     }
     function getnoAsset(){
         $query=$this->db->query('select nomor_aset from inventarisasi_aset');
