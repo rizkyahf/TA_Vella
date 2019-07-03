@@ -19,7 +19,7 @@ class c_asset extends CI_Controller{
         $this->load->view('v_template',$data);
     }
     public function addaset(){
-        if ($this->input->post('Simpan')!=null){
+        if ($this->input->post('simpan')!=null){
             $input['nomor_aset'] = $this->input->post('nomor_aset');
             $input['nama'] = $this->input->post('nama');
             $input['tanggal_pengadaan'] = $this->input->post('tanggal_pengadaan');
@@ -30,6 +30,11 @@ class c_asset extends CI_Controller{
             $input['lokasi'] = $this->input->post('lokasi');
             $input['penanggungjawab'] = $this->input->post('penanggungjawab');
             $input['jenis'] = $this->input->post('jenis');
+
+            echo "<pre>"; var_dump($this->input->post()); echo "</pre>";
+            $this->m_asset->addData($input);
+
+            redirect(base_url("index.php/c_home/display"));
         }
     }
 }

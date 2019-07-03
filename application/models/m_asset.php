@@ -7,9 +7,9 @@ class m_asset extends CI_Model{
         return $query->result_array();
     }
     
-    function addData($inventarisasi_aset){
+    function addData($dataIn){
         // $data = array('nim' => $nim, 'nama' => $nama, 'umur' => $umur);
         // $query=$this->db->query("insert into mahasiswa VALUES ('nim','nama','umur')");
-        $this->db->insert('asset',$inventarisasi_aset);
+        $this->db->insert('inventarisasi_aset',$dataIn);
     }
 }
