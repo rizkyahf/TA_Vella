@@ -7,9 +7,9 @@ class m_optimasiaset extends CI_Model{
         return $query->result_array();
     }
     
-    function addData($optimasi_aset){
+    function addData($data){
         // $data = array('nim' => $nim, 'nama' => $nama, 'umur' => $umur);
         // $query=$this->db->query("insert into mahasiswa VALUES ('nim','nama','umur')");
-        $this->db->insert('asset',$optimasi_aset);
+        $this->db->insert('optimasi_aset',$data);
     }
 }

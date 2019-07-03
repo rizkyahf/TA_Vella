@@ -48,7 +48,7 @@
                                 <?php 
                                     if($result['foto_optimasi'] == NULL) {$foto = "maintenance.png";}
                                     else {$foto = $result['foto_optimasi'];}?>
-                                <img src="<?php echo base_url(); ?>asset/upload/<?php echo $foto; ?>" width="100px">
+                                <img src="<?php echo base_url(); ?>asset/upload/optimasi/<?php echo $foto; ?>" width="100px">
                             </td>
                             <td>
                                 <?php echo $result['estimasi_biaya']; ?>

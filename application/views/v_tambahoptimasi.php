@@ -1,7 +1,7 @@
 <div class="row">
     <h2 align="center">Input Data Optimasi Aset</h2>
     <div class="col-md-6 col-md-offset-3">
-        <form method="POST" action="<?php echo base_url();?>index.php/c_mahasiswa/addmahasiswa" enctype="multipart/form-data">
+        <form method="POST" action="<?php echo base_url();?>index.php/c_optimasiaset/addoptimasi" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="akusisi">Akusisi</label>
                 <select class="js-select2 form-control" id="akusisi" placeholder="Akuisi" name="akusisi">
@@ -34,7 +34,7 @@
                 <label for="estimasi_biaya">Estimasi Biaya</label>
                 <input type="text" class="form-control" id="estimasi_biaya" placeholder="Estimasi Biaya" name="estimasi_biaya">
             </div>
-            <input type="submit" class="btn btn-sm btn-primary" name="Save" value="Save">
+            <input type="submit" class="btn btn-sm btn-primary" name="simpan" value="Save">
         </form>
     </div>
 </div>
