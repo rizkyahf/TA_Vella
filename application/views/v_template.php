@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="<?php echo base_url();?>asset/bootstrap/css/bootstrap.css">
         <link rel="stylesheet" href="<?php echo base_url();?>asset/bootstrap/datatable/datatables.css">
         <link rel="stylesheet" href="<?php echo base_url();?>asset/bootstrap/datatable/buttons.datatables.min.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
         <style>
             p{
             font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -100,6 +101,8 @@
         <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
                 
         <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
+        
         <script type="text/javascript"> 
             $(document).ready( function () {
                 $('.table-filtered').DataTable({
@@ -125,6 +128,8 @@
                         }
                     ]
                 });
+                
+                $('.js-select2').select2();
             });
         </script>
     </body>

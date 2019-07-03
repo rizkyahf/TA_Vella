@@ -1,15 +1,16 @@
 <div class="row">
     <h2 align="center">Input Legal Audit</h2>
     <div class="col-md-6 col-md-offset-3">
-        <form method="POST" action="<?php echo base_url();?>index.php/c_mahasiswa/addmahasiswa" enctype="multipart/form-data">
+        <form method="POST" action="<?php echo base_url();?>index.php/c_legalaudit/add" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="nomor_aset">Nomor Aset</label>
                 <!-- <input type="text" class="form-control" id="nomor_aset" placeholder="Nomor Aset" name="nomor_aset"> -->
-                <select class="js-example-basic-single form-control" id="nomor_aset" placeholder="Nomor Aset" name="nomor_aset">
+                <select class="js-select2 form-control" id="nomor_aset" placeholder="Nomor Aset" name="nomor_aset">
+                    <option> -- Pilih No. Asset -- </option>
                     <?php
                         foreach($nomor_aset as $result){?>
-                        echo $result['nomor_aset']
-                            <option value="<?php echo $result['nomor_aset'] ?>">
+                        <!-- echo $result['nomor_aset'] -->
+                            <option value="<?php echo $result['nomor_aset'] ?>"><?php echo $result['nomor_aset'] ?></option>
                         <?php }
                     ?>
                 </select>
@@ -26,7 +27,7 @@
                 <label for="foto_aset">Foto Aset</label>
                 <input type="file" id="foto_aset" name="foto_aset">
             </div>
-            <input type="submit" class="btn btn-sm" name="Save" value="Save">
+            <input type="submit" class="btn btn-sm btn-primary" name="Save" value="Save">
         </form>
     </div>
 </div>

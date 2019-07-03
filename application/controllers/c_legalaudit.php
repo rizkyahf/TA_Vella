@@ -16,7 +16,8 @@ class c_legalaudit extends CI_Controller{
         $this->load->view('v_template',$data);
     }
     public function input(){
-        $data['content'] = $this->load->view('v_tambahlegal','',true);
+        $data2['nomor_aset'] = $this->m_asset->getData();
+        $data['content'] = $this->load->view('v_tambahlegal',$data2, true);
         $this->load->view('v_template',$data);
     }
     public function add(){
