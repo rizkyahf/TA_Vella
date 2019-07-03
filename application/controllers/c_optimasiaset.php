@@ -8,6 +8,7 @@ class c_optimasiaset extends CI_Controller{
             redirect(site_url('c_user/login'));
         }
         $this->load->model('m_optimasiaset');
+        $this->load->model('m_penilaianaset');
     }
     public function display(){
         $data_aset['optimasiaset']=$this->m_optimasiaset->getData();
@@ -15,7 +16,8 @@ class c_optimasiaset extends CI_Controller{
         $this->load->view('v_template',$data);
     }
     public function input(){
-        $data['content'] = $this->load->view('v_tambahoptimasi','',true);
+        $data2['akusisi'] = $this->m_penilaianaset->getData();
+        $data['content'] = $this->load->view('v_tambahoptimasi',$data2,true);
         $this->load->view('v_template',$data);
     }
     public function addoptimasi(){

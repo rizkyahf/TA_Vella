@@ -4,7 +4,15 @@
         <form method="POST" action="<?php echo base_url();?>index.php/c_mahasiswa/addmahasiswa" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="akusisi">Akusisi</label>
-                <input type="text" class="form-control" id="akusisi" placeholder="Akuisi" name="akuisi">
+                <select class="js-select2 form-control" id="akusisi" placeholder="Akuisi" name="akusisi">
+                    <option> -- Pilih No. Asset -- </option>
+                    <?php
+                        foreach($akusisi as $result){?>
+                        <!-- echo $result['nomor_aset'] -->
+                            <option value="<?php echo $result['akusisi'] ?>"><?php echo $result['akusisi'] ?></option>
+                        <?php }
+                    ?>
+                </select>
             </div>
             <div class="form-group">
                 <label for="kondisi">Kondisi</label>
@@ -26,7 +34,7 @@
                 <label for="estimasi_biaya">Estimasi Biaya</label>
                 <input type="text" class="form-control" id="estimasi_biaya" placeholder="Estimasi Biaya" name="estimasi_biaya">
             </div>
-            <input type="submit" class="btn btn-sm" name="Save" value="Save">
+            <input type="submit" class="btn btn-sm btn-primary" name="Save" value="Save">
         </form>
     </div>
 </div>
