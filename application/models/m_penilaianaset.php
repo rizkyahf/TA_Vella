@@ -7,9 +7,9 @@ class m_penilaianaset extends CI_Model{
         return $query->result_array();
     }
     
-    function addData($penilaian_aset){
+    function addData($data){
         // $data = array('nim' => $nim, 'nama' => $nama, 'umur' => $umur);
         // $query=$this->db->query("insert into mahasiswa VALUES ('nim','nama','umur')");
-        $this->db->insert('asset',$penilaian_aset);
+        $this->db->insert('penilaian_aset',$data);
     }
 }

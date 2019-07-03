@@ -31,7 +31,7 @@ class c_asset extends CI_Controller{
             $input['penanggungjawab'] = $this->input->post('penanggungjawab');
             $input['jenis'] = $this->input->post('jenis');
 
-            echo "<pre>"; var_dump($this->input->post()); echo "</pre>";
+            // echo "<pre>"; var_dump($this->input->post()); echo "</pre>";
             $this->m_asset->addData($input);
 
             redirect(base_url("index.php/c_home/display"));

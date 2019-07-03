@@ -21,30 +21,18 @@ class c_penilaianaset extends CI_Controller{
         $this->load->view('v_template',$data);
     }
     public function add(){
-        if ($this->input->post('Simpan')!=null){
-            $input['nomor_dokumen'] = $this->input->post('nomor_dokumen');
-            $input['tanggal_penetapan'] = $this->input->post('tanggal_penetapan');
-            $input['foto_aset'] = '';
+        if ($this->input->post('simpan')!=null){
+            $input['nomor_aset']    		= $this->input->post('nomor_aset');
+			$input['akusisi']      			= $this->input->post('akusisi');
+			$input['akumulasi_depresiasi']	= $this->input->post('akumulasi_depresiasi');
+			$input['nilai_akhir']			= $this->input->post('nilai_akhir');
+			$input['BalShTm']				= $this->input->post('BalShTm');
+			$input['ApCacct']				= $this->input->post('ApCacct');
 
-            $config['upload_path']  = 'asset/upload';
-            $config['allowed_types'] = 'jpg|jpeg|png';
-            $config['file_name']    = $input['nomor_dokumen'];
-            $config['max_size']     = 5000;
+            // echo "<pre>"; var_dump($this->input->post()); echo "</pre>";
+            $this->m_penilaianaset->addData($input);
 
-            $this->load->library('upload',$config);
-
-            if (!$this->upload->do_upload('foto')){
-                $error = array('error' => $this->upload->display_errors());
-                // echo $error;
-                // echo 'error';
-                echo $this->upload->display_errors();
-            } else {
-                echo 'input';
-                $input['foto_aset'] = $this->upload->data('file_name');
-                echo $input['foto_aset'];
-                $this->m_mahasiswa->addData($input);
-                redirect(site_url('c_penilaianaset/display'));    
-            }
+            redirect(base_url("index.php/c_penilaianaset/display"));
         }
     }
 }
