@@ -8,6 +8,7 @@ class c_penilaianaset extends CI_Controller{
             redirect(site_url('c_user/login'));
         }
         $this->load->model('m_penilaianaset');
+        $this->load->model('m_asset');
     }
     public function display(){
         $data_aset['penilaianaset']=$this->m_penilaianaset->getData();
@@ -15,7 +16,8 @@ class c_penilaianaset extends CI_Controller{
         $this->load->view('v_template',$data);
     }
     public function input(){
-        $data['content'] = $this->load->view('v_tambahnilaiaset','',true);
+        $data2['nomor_aset'] = $this->m_asset->getData();
+        $data['content'] = $this->load->view('v_tambahnilaiaset',$data2,true);
         $this->load->view('v_template',$data);
     }
     public function add(){

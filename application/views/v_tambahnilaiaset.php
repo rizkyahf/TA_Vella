@@ -4,7 +4,15 @@
         <form method="POST" action="<?php echo base_url();?>index.php/c_mahasiswa/addmahasiswa" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="nomor_aset">Nomor Aset</label>
-                <input type="text" class="form-control" id="nomor_aset" placeholder="Nomor Aset" name="nomor_aset">
+                <select class="js-select2 form-control" id="nomor_aset" placeholder="Nomor Aset" name="nomor_aset">
+                    <option> -- Pilih No. Asset -- </option>
+                    <?php
+                        foreach($nomor_aset as $result){?>
+                        <!-- echo $result['nomor_aset'] -->
+                            <option value="<?php echo $result['nomor_aset'] ?>"><?php echo $result['nomor_aset'] ?></option>
+                        <?php }
+                    ?>
+                </select>
             </div>
             <div class="form-group">
                 <label for="akusisi">Akusisi</label>
