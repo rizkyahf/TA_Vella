@@ -16,7 +16,7 @@
             </div>
             <div class="form-group">
                 <label for="tanggal_pengadaan">Tanggal Pengadaan</label>
-                <input type="text" class="form-control" id="tanggal_pengadaan" placeholder="Tanggal Pengadaan (yyyy-mm-dd)" name="tanggal_pengadaan">
+                <input type="text" class="form-control datepicker" id="tanggal_pengadaan" placeholder="Tanggal Pengadaan (yyyy-mm-dd)" name="tanggal_pengadaan">
             </div>
             <div class="form-group">
                 <label for="deskripsi_kegunaan">Deskripsi Kegunaan</label>

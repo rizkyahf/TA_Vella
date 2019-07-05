@@ -21,7 +21,7 @@
             </div>
             <div class="form-group">
                 <label for="tanggal_penetapan">Tanggal Penetapan</label>
-                <input type="text" class="form-control" id="tanggal_penetapan" placeholder="Tanggal Penetapan" name="tanggal_penetapan">
+                <input type="text" class="form-control datepicker" id="tanggal_penetapan" placeholder="Tanggal Penetapan" name="tanggal_penetapan">
             </div>
             <div class="form-group">
                 <label for="foto_aset">Foto Aset</label>

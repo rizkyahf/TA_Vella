@@ -7,7 +7,11 @@
         <link rel="stylesheet" href="<?php echo base_url();?>asset/bootstrap/css/bootstrap.css">
         <link rel="stylesheet" href="<?php echo base_url();?>asset/bootstrap/datatable/datatables.css">
         <link rel="stylesheet" href="<?php echo base_url();?>asset/bootstrap/datatable/buttons.datatables.min.css">
+        
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
         <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
+
         <style>
             p{
             font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -99,7 +103,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
         <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
         <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
-                
+
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
         <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
         
@@ -130,6 +136,9 @@
                 });
 
                 $('.js-select2').select2();
+                $('.datepicker').datepicker({
+                    dateFormat:'yy-mm-dd'
+                });
             });
         </script>
     </body>
