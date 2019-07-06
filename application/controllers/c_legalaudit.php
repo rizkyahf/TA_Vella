@@ -48,4 +48,11 @@ class c_legalaudit extends CI_Controller{
             }
         }
     }
+    public function showSertificateajax($id){
+        $sertifikat=$this->m_legalaudit->getDataById($id);
+        // echo '<pre>'; var_dump($sertifikat); echo '</pre>';?>
+
+        <img src="<?php echo base_url();?>asset/upload/legal/<?php echo $sertifikat['foto_aset'];?>" alt="" class="img img-responsive">
+        <?php
+    }
 }

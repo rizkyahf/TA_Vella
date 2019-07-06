@@ -36,7 +36,9 @@
                                 <?php echo $result['tanggal_penetapan']; ?>
                             </td>
                             <td>
-                                <?php echo $result['foto_aset']; ?>
+                                <a data-idsertifikat="<?php echo $result['nomor_dokumen'];?> " onClick="showModalSertifikat(<?php echo $result['nomor_dokumen'];?>);">
+                                    <?php echo $result['foto_aset']; ?>
+                                </a>
                             </td>
                         </tr>
                     <?php        

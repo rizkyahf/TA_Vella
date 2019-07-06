@@ -16,4 +16,10 @@ class m_legalaudit extends CI_Model{
         $query=$this->db->query('select nomor_aset from inventarisasi_aset');
         return $query->result_array();
     }
+    function getDataById($id){
+        $this->db->select('*');
+        $this->db->from('legal_audit');
+        $this->db->where('nomor_dokumen',$id);
+        return $this->db->get()->result_array()[0];
+    }
 }

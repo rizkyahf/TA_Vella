@@ -95,6 +95,23 @@
                 <?php echo $content;?>
             </div>
         </div>
+
+        <div class="modal fade" id="popup_sertifikat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Sertifikat</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="sertifikat_wrapper">
+                    
+                </div>
+            </div>
+        </div>
+        
+
         <script src="<?php echo base_url();?>asset/bootstrap/js/jquery-3.3.1.min.js"></script>
         <script src="<?php echo base_url();?>asset/bootstrap/js/bootstrap.js"></script>
         <script src="<?php echo base_url();?>asset/bootstrap/datatable/datatables.min.js"></script>
@@ -140,6 +157,34 @@
                     dateFormat:'yy-mm-dd'
                 });
             });
+
+            function showModalSertifikat(id){
+                // $('#popup_sertifikat').modal('show');
+                // var id = $(this).attr("data-idsertifikat");
+                var url = "<?php echo base_url(); ?>index.php/c_legalaudit/showSertificateajax/"+id; 
+                $.ajax({
+                    url: url,
+                    success: function(res) {
+                        console.log("id = " + id);
+
+                        // get the ajax response data
+                        // var data = res.body;
+
+                        // update modal content here
+                        // you may want to format data or 
+                        // update other modal elements here too
+                        // $('.modal-body').text(data);
+                        $('#sertifikat_wrapper').html(res);
+
+                        // show modal
+                        $('#popup_sertifikat').modal('show');
+
+                    },
+                    error:function(request, status, error) {
+                        console.log("ajax call went wrong:" + url + " - " + request.responseText);
+                    }
+                });
+            }
         </script>
     </body>
     <footer class="text-center">
