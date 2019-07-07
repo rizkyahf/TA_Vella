@@ -20,6 +20,9 @@
                     <td>
                         Sertificate
                     </td>
+                    <td>
+                        Action
+                    </td>
                 </tr>
             </thead>
             <tbody>
@@ -39,6 +42,9 @@
                                 <a data-idsertifikat="<?php echo $result['nomor_dokumen'];?> " onClick="showModalSertifikat(<?php echo $result['nomor_dokumen'];?>);">
                                     <?php echo $result['foto_aset']; ?>
                                 </a>
+                            </td>
+                            <td>
+                                <a class="btn btn-danger btn-xs" href="<?php echo base_url(); ?>index.php/c_legalaudit/delete/<?php echo $result['nomor_dokumen']; ?>"> Delete </a>
                             </td>
                         </tr>
                     <?php        

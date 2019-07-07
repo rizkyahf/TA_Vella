@@ -37,4 +37,8 @@ class c_asset extends CI_Controller{
             redirect(base_url("index.php/c_home/display"));
         }
     }
+    public function delete($id){
+        $this->m_asset->delete($id);
+        redirect(base_url("index.php/c_home/display"));
+    }
 }

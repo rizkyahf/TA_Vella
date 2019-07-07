@@ -55,4 +55,11 @@ class c_legalaudit extends CI_Controller{
         <img src="<?php echo base_url();?>asset/upload/legal/<?php echo $sertifikat['foto_aset'];?>" alt="" class="img img-responsive">
         <?php
     }
+    public function delete($id){
+        $record = $this->m_legalaudit->getDataById($id);
+        $file = $record['foto_aset'];
+        unlink("./asset/upload/legal/".$file."");
+        $this->m_legalaudit->delete($id);
+        redirect(base_url("index.php/c_legalaudit/display"));
+    }
 }

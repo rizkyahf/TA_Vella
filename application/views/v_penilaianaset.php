@@ -26,6 +26,9 @@
                     <td>
                         ApCacct
                     </td>
+                    <td>
+                        Action
+                    </td>
                 </tr>
             </thead>
             <tbody>
@@ -49,6 +52,9 @@
                             </td>
                             <td>
                                 <?php echo $result['ApCacct']; ?>
+                            </td>
+                            <td>
+                                <a class="btn btn-danger btn-xs" href="<?php echo base_url(); ?>index.php/c_penilaianaset/delete/<?php echo $result['akusisi']; ?>"> Delete </a>
                             </td>
                         </tr>
                     <?php        

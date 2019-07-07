@@ -12,4 +12,9 @@ class m_asset extends CI_Model{
         // $query=$this->db->query("insert into mahasiswa VALUES ('nim','nama','umur')");
         $this->db->insert('inventarisasi_aset',$dataIn);
     }
+
+    function delete($id){
+        $this->db->where('nomor_aset', $id);
+        $this->db->delete('inventarisasi_aset');
+    }
 }

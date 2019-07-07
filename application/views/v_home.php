@@ -18,6 +18,7 @@
                     <td>Status</td>
                     <td>Lokasi</td>
                     <td>Penanggungjawab</td>
+                    <td>Action</td>
                 </tr>
             </thead>
             <tbody>
@@ -53,6 +54,9 @@
                             </td>
                             <td>
                                 <?php echo $result['penanggungjawab']; ?>
+                            </td>
+                            <td>
+                                <a class="btn btn-danger btn-xs" href="<?php echo base_url(); ?>index.php/c_asset/delete/<?php echo $result['nomor_aset']; ?>"> Delete </a>
                             </td>
                         </tr>
                     <?php        

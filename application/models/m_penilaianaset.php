@@ -12,4 +12,9 @@ class m_penilaianaset extends CI_Model{
         // $query=$this->db->query("insert into mahasiswa VALUES ('nim','nama','umur')");
         $this->db->insert('penilaian_aset',$data);
     }
+    
+    function delete($id){
+        $this->db->where("akusisi = '$id' ");
+        $this->db->delete('penilaian_aset');
+    }
 }

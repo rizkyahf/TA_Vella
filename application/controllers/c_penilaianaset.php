@@ -35,4 +35,8 @@ class c_penilaianaset extends CI_Controller{
             redirect(base_url("index.php/c_penilaianaset/display"));
         }
     }
+    public function delete($id){
+        $this->m_penilaianaset->delete($id);
+        redirect(base_url("index.php/c_penilaianaset/display"));
+    }
 }
