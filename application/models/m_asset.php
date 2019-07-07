@@ -17,4 +17,20 @@ class m_asset extends CI_Model{
         $this->db->where('nomor_aset', $id);
         $this->db->delete('inventarisasi_aset');
     }
+    function edit($nomor_aset){
+        $query = $this->db->where("nomor_aset", $nomor_aset)->get("inventarisasi_aset");
+        if($query){
+            return true;
+        } else {
+            return false;
+        }
+    }
+    function update($data,$id){
+        $query = $this->db->update("inventarisasi_aset", $data, $id);
+        if($query){
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

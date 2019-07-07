@@ -41,4 +41,29 @@ class c_asset extends CI_Controller{
         $this->m_asset->delete($id);
         redirect(base_url("index.php/c_home/display"));
     }
+    public function edit(){
+        $nomot_asset = $this->uri->segment(3);
+        $data = array(
+            'title'=>'Edit Data Aset',
+            'data_asset'=>$this->m_asset->edit($nomor_asset);
+        );
+        $this->load->view('v-editasset',$data);
+    }
+    public function update(){
+        $id['nomor_aset'] = $this->input->post("nomor_aset");
+        $data=array(
+            'nama'=>$this->input->post("nama"),
+            'tanggal_pengadaan'=>$this->input->post("tanggal_pengadaan"),
+            'deskripsi_kegunaan'=>$this->input->post("deskripsi_kegunaan"),
+            'tipe'=>$this->input->post("tipe"),
+            'keterangan'=>$this->input->post("keterangan"),
+            'status'=>$this->input->post("status"),
+            'lokasi'=>$this->input->post("lokasi"),
+            'penanggungjawab'=>$this->input->post("penanggungjawab"),
+            'jenis'=>$this->input->post("jenis"),
+        );
+        $this->m_asset->update($data, $id);
+        $this->session->set_flashdata('notif', '<div class="alert alert-success alert-dismissible"> Success! data berhasil diupdate didatabase.</div>');
+        redirect(base_url("index.php/c_home/display"));
+    }
 }

@@ -57,6 +57,7 @@
                             </td>
                             <td>
                                 <a class="btn btn-danger btn-xs" href="<?php echo base_url(); ?>index.php/c_asset/delete/<?php echo $result['nomor_aset']; ?>"> Delete </a>
+                                <a class="btn btn-danger btn-xs" href="<?php echo base_url(); ?>index.php/c_asset/edit/<?php echo $result['nomor_aset']; ?>"> Update </a>
                             </td>
                         </tr>
                     <?php        
