@@ -41,13 +41,13 @@ class c_asset extends CI_Controller{
         $this->m_asset->delete($id);
         redirect(base_url("index.php/c_home/display"));
     }
-    public function edit(){
-        $nomot_asset = $this->uri->segment(3);
-        $data = array(
-            'title'=>'Edit Data Aset',
-            'data_asset'=>$this->m_asset->edit($nomor_asset);
-        );
-        $this->load->view('v-editasset',$data);
+    public function edit($nomor_asset){
+        $data = "";
+        // $data = array(
+        //     'title'=>'Edit Data Aset'
+        //     'data_asset'=>$this->m_asset->edit($nomor_asset);
+        // );
+        $this->load->view('v_editasset',$data);
     }
     public function update(){
         $id['nomor_aset'] = $this->input->post("nomor_aset");
