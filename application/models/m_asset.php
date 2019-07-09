@@ -6,6 +6,11 @@ class m_asset extends CI_Model{
         $query=$this->db->query('select * from inventarisasi_aset');
         return $query->result_array();
     }
+
+    function getDataByID($id){
+        $query=$this->db->query('select * from inventarisasi_aset where nomor_aset = '.$id);
+        return $query->result_array()[0];
+    }
     
     function addData($dataIn){
         // $data = array('nim' => $nim, 'nama' => $nama, 'umur' => $umur);
@@ -17,20 +22,22 @@ class m_asset extends CI_Model{
         $this->db->where('nomor_aset', $id);
         $this->db->delete('inventarisasi_aset');
     }
-    function edit($nomor_aset){
-        $query = $this->db->where("nomor_aset", $nomor_aset)->get("inventarisasi_aset");
-        if($query){
-            return true;
-        } else {
-            return false;
-        }
-    }
+    // function edit($nomor_aset){
+    //     $query = $this->db->where("nomor_aset", $nomor_aset)->get("inventarisasi_aset");
+    //     if($query){
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    // }
     function update($data,$id){
-        $query = $this->db->update("inventarisasi_aset", $data, $id);
-        if($query){
-            return true;
-        } else {
-            return false;
-        }
+        // $query = $this->db->update("inventarisasi_aset", $data, $id);
+        // if($query){
+        //     return true;
+        // } else {
+        //     return false;
+        // }
+        $this->db->where('nomor_aset', $id);
+        $this->db->update('inventarisasi_aset', $data);
     }
 }
