@@ -17,4 +17,8 @@ class m_penilaianaset extends CI_Model{
         $this->db->where("akusisi = '$id' ");
         $this->db->delete('penilaian_aset');
     }
+    function update($data,$id){
+        $this->db->where('akusisi', $id);
+        $this->db->update('penilaian_aset', $data);
+    }
 }

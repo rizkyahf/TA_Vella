@@ -26,4 +26,8 @@ class m_legalaudit extends CI_Model{
         $this->db->where("nomor_dokumen = '$id' ");
         $this->db->delete('legal_audit');
     }
+    function update($data,$id){
+        $this->db->where('nomor_dokumen', $id);
+        $this->db->update('legal_audit', $data);
+    }
 }

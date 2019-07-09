@@ -62,4 +62,22 @@ class c_legalaudit extends CI_Controller{
         $this->m_legalaudit->delete($id);
         redirect(base_url("index.php/c_legalaudit/display"));
     }
+    public function edit($nomor_asset){
+        $data = "";
+        // $data = array(
+        //     'title'=>'Edit Data Aset'
+        //     'data_asset'=>$this->m_asset->edit($nomor_asset);
+        // );
+        $this->load->view('v_editlegal',$data);
+    }
+    public function update(){
+        $id['nomor_dokumen'] = $this->input->post("nomor_dokumen");
+        $data=array(
+            'tanggal_penetapan'=>$this->input->post("tanggal_penetapan"),
+            'foto_aset'=>$this->input->post("foto_aset"), //ini masih bingung kalo ganti foto gimana ceritanya
+        );
+        $this->m_asset->update($data, $id);
+        $this->session->set_flashdata('notif', '<div class="alert alert-success alert-dismissible"> Success! data berhasil diupdate didatabase.</div>');
+        redirect(base_url("index.php/c_legalaudit/display"));
+    }
 }
