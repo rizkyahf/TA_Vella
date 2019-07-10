@@ -44,6 +44,7 @@
                                 </a>
                             </td>
                             <td>
+                                <a class="btn btn-success btn-xs" href="<?php echo base_url(); ?>index.php/c_legalaudit/edit/<?php echo $result['nomor_dokumen']; ?>"> Update </a>
                                 <a class="btn btn-danger btn-xs" href="<?php echo base_url(); ?>index.php/c_legalaudit/delete/<?php echo $result['nomor_dokumen']; ?>"> Delete </a>
                             </td>
                         </tr>

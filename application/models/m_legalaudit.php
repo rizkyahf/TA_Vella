@@ -7,6 +7,11 @@ class m_legalaudit extends CI_Model{
         return $query->result_array();
     }
     
+    // function getDataByID($id){
+    //     $query=$this->db->query('select * from legal_audit where nomor_dokumen = '.$id);
+    //     return $query->result_array()[0];
+    // }
+
     function addData($data){
         // $data = array('nim' => $nim, 'nama' => $nama, 'umur' => $umur);
         // $query=$this->db->query("insert into mahasiswa VALUES ('nim','nama','umur')");
@@ -26,4 +31,10 @@ class m_legalaudit extends CI_Model{
         $this->db->where("nomor_dokumen = '$id' ");
         $this->db->delete('legal_audit');
     }
+
+    function update($data, $id){
+        $this->db->where("nomor_dokumen = '$id'");
+        $this->db->update('legal_audit', $data);
+    }
+
 }
