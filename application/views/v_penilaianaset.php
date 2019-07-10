@@ -54,7 +54,8 @@
                                 <?php echo $result['ApCacct']; ?>
                             </td>
                             <td>
-                                <a class="btn btn-danger btn-xs" href="<?php echo base_url(); ?>index.php/c_penilaianaset/delete/<?php echo $result['akusisi']; ?>"> Delete </a>
+                                <a class="btn btn-success btn-xs" href="<?php echo base_url(); ?>index.php/c_penilaianaset/edit/<?php echo $result['akusisi']; ?>"> Update </a>
+                                <a class="btn btn-danger btn-xs"  href="<?php echo base_url(); ?>index.php/c_penilaianaset/delete/<?php echo $result['akusisi']; ?>"> Delete </a>
                             </td>
                         </tr>
                     <?php        

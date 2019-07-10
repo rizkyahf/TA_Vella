@@ -39,4 +39,26 @@ class c_penilaianaset extends CI_Controller{
         $this->m_penilaianaset->delete($id);
         redirect(base_url("index.php/c_penilaianaset/display"));
     }
+    public function edit($akusisi){
+        $data2['nilaiaset']=$this->m_penilaianaset->getDataByID($akusisi);
+        $data2['nomor_aset'] = $this->m_asset->getData();
+        $data['content'] = $this->load->view('v_editnilaiaset',$data2,true);
+        $this->load->view('v_template',$data);
+    }
+    public function update(){
+        if ($this->input->post('simpan')!=null){
+            $id = $this->input->post('akusisi_old');
+            $input['nomor_aset']    		= $this->input->post('nomor_aset');
+			$input['akusisi']      			= $this->input->post('akusisi');
+			$input['akumulasi_depresiasi']	= $this->input->post('akumulasi_depresiasi');
+			$input['nilai_akhir']			= $this->input->post('nilai_akhir');
+			$input['BalShTm']				= $this->input->post('BalShTm');
+			$input['ApCacct']				= $this->input->post('ApCacct');
+
+            // echo "<pre>"; var_dump($this->input->post()); echo "</pre>";
+            $this->m_penilaianaset->update($input, $id);
+
+            redirect(base_url("index.php/c_penilaianaset/display"));
+        }
+    }
 }

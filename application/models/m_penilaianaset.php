@@ -7,6 +7,11 @@ class m_penilaianaset extends CI_Model{
         return $query->result_array();
     }
     
+    function getDataByID($id){
+        $query=$this->db->query('select * from penilaian_aset where akusisi = '.$id);
+        return $query->result_array()[0];
+    }
+
     function addData($data){
         // $data = array('nim' => $nim, 'nama' => $nama, 'umur' => $umur);
         // $query=$this->db->query("insert into mahasiswa VALUES ('nim','nama','umur')");
@@ -16,5 +21,10 @@ class m_penilaianaset extends CI_Model{
     function delete($id){
         $this->db->where("akusisi = '$id' ");
         $this->db->delete('penilaian_aset');
+    }
+
+    function update($data, $id){
+        $this->db->where("akusisi = '$id'");
+        $this->db->update('penilaian_aset', $data);
     }
 }
